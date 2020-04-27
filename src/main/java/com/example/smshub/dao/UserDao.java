@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao extends CrudRepository<User, Integer> {
 
-    User findByClustername(String clustername);
+//    User findByClustername(String clustername);
 }

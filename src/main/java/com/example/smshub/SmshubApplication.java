@@ -5,7 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.example.smshub.dao.LcrDao;
 import com.example.smshub.dao.UserDao;
+import com.example.smshub.model.Lcr;
 import com.example.smshub.model.User;
 
 @SpringBootApplication
@@ -16,18 +18,18 @@ public class SmshubApplication {
 	}
 //
 //	 @Bean
-//   public CommandLineRunner init(UserDao userDao){
+//   public CommandLineRunner init(LcrDao lcrdao){
 //       return args -> {
-//           User user1 = new User();
-//           user1.setClustername("Devglan");
-//           user1.setClustertype("Devglan");
-//                    userDao.save(user1);
+//           Lcr user1 = new Lcr();
+//           user1.setLcr_name("Devglan");
+//           user1.setLcr_type("Devglan");
+//                    lcrdao.save(user1);
 ////
-//           User user2 = new User();
-//           user2.setClustername("John");
-//           user2.setClustertype("Doe");
-//           userDao.save(user2);
+//           Lcr user2 = new Lcr();
+//           user2.setLcr_name("John");
+//           user2.setLcr_type("Doe");
+//           lcrdao.save(user2);
 //       };
-//   }
+// }
 
 }

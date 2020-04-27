@@ -30,24 +30,24 @@ import com.example.smshub.service.UserService;
 		}
 
 		@Override
-		public void delete(int id) {
-			userDao.deleteById(id);
+		public void delete(int cluster_id) {
+			userDao.deleteById(cluster_id);
 		}
 
-		@Override
-		public User findOne(String clustername) {
-			return userDao.findByClustername(clustername);
-		}
+//		@Override
+//		public User findOne(String clustername) {
+//			return userDao.findByClustername(clustername);
+//		}
 
 		@Override
-		public User findById(int id) {
-			Optional<User> optionalUser = userDao.findById(id);
+		public User findById(int cluster_id) {
+			Optional<User> optionalUser = userDao.findById(cluster_id);
 			return optionalUser.isPresent() ? optionalUser.get() : null;
 		}
 
 	    @Override
 	    public UserDto update(UserDto userDto) {
-	        User user = findById(userDto.getId());
+	        User user = findById(userDto.getCluster_id());
 	        if(user != null) {
 	            BeanUtils.copyProperties(userDto, user, "password", "username");
 	            userDao.save(user);
@@ -58,9 +58,9 @@ import com.example.smshub.service.UserService;
 	    @Override
 	    public User save(UserDto user) {
 		    User newUser = new User();
-		    newUser.setId(user.getId());
-		    newUser.setClustername(user.getClustername());
-		    newUser.setClustertype(user.getClustertype());
+//		    newUser.setId(user.getId());
+		    newUser.setCluster_name(user.getCluster_name());
+		    newUser.setCluster_type(user.getCluster_type());
 	        return userDao.save(newUser);
 	    }
 

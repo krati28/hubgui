@@ -8,11 +8,11 @@ public interface UserService {
 
 	User save(UserDto user);
     List<User> findAll();
-    void delete(int id);
+    void delete(int cluster_id);
 
-    User findOne(String clustername);
+    User findOne(String cluster_name);
 
-    User findById(int id);
+    User findById(int cluster_id);
 
     UserDto update(UserDto userDto);
 }
