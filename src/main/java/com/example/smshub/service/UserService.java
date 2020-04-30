@@ -8,7 +8,7 @@ public interface UserService {
 
 	User save(UserDto user);
     List<User> findAll();
-    void delete(int cluster_id);
+    void delete(int id);
 
     User findOne(String cluster_name);
 

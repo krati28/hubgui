@@ -35,8 +35,8 @@ public class LcrServiceImpl implements LcrService{
 	}
 	
 	@Override
-	public void delete(int lcr_id) {
-		lcrdao.deleteById(lcr_id);
+	public void delete(int id) {
+		lcrdao.deleteById(id);
 	}
 
 //	@Override
@@ -45,14 +45,14 @@ public class LcrServiceImpl implements LcrService{
 //	}
 
 	@Override
-	public Lcr findById(int lcr_id) {
-		Optional<Lcr> optionalUser = lcrdao.findById(lcr_id);
+	public Lcr findById(int lcr_policy_id) {
+		Optional<Lcr> optionalUser = lcrdao.findById(lcr_policy_id);
 		return optionalUser.isPresent() ? optionalUser.get() : null;
 	}
 
     @Override
     public LcrDto update(LcrDto lcrDto) {
-        Lcr lcr_data = findById(lcrDto.getLcr_id());
+        Lcr lcr_data = findById(lcrDto.getLcr_policy_id());
         if(lcr_data != null) {
             BeanUtils.copyProperties(lcrDto, lcr_data, "password", "username");
             lcrdao.save(lcr_data);
@@ -65,8 +65,15 @@ public class LcrServiceImpl implements LcrService{
 		Lcr newLcr = new Lcr();
     	newLcr.setLcr_name(lcr.getLcr_name());
     	newLcr.setLcr_type(lcr. getLcr_type());
+    	newLcr.setThird_supp_retry(lcr.getThird_supp_retry());
         return lcrdao.save(newLcr);
     }
+
+	@Override
+	public Lcr findOne(String lcr_name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

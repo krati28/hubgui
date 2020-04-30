@@ -3,14 +3,22 @@ package com.example.smshub.model;
 public class LcrDto {
 	
 
-	private int lcr_id;
+	private int lcr_policy_id;
 	private String lcr_name;
 	private String lcr_type;
-	public int getLcr_id() {
-		return lcr_id;
+	private int third_supp_retry;
+	
+	public int getThird_supp_retry() {
+		return third_supp_retry;
 	}
-	public void setLcr_id(int lcr_id) {
-		this.lcr_id = lcr_id;
+	public void setThird_supp_retry(int third_supp_retry) {
+		this.third_supp_retry = third_supp_retry;
+	}
+	public int getLcr_policy_id() {
+		return lcr_policy_id;
+	}
+	public void setLcr_policy_id(int lcr_policy_id) {
+		this.lcr_policy_id = lcr_policy_id;
 	}
 	public String getLcr_name() {
 		return lcr_name;

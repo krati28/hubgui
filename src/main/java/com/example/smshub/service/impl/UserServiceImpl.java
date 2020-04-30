@@ -30,8 +30,8 @@ import com.example.smshub.service.UserService;
 		}
 
 		@Override
-		public void delete(int cluster_id) {
-			userDao.deleteById(cluster_id);
+		public void delete(int id) {
+			userDao.deleteById(id);
 		}
 
 //		@Override
@@ -61,7 +61,14 @@ import com.example.smshub.service.UserService;
 //		    newUser.setId(user.getId());
 		    newUser.setCluster_name(user.getCluster_name());
 		    newUser.setCluster_type(user.getCluster_type());
+		    newUser.setOperator_ids(user.getOperator_ids());
 	        return userDao.save(newUser);
 	    }
+
+		@Override
+		public User findOne(String cluster_name) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
 }

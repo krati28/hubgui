@@ -47,7 +47,7 @@ public class LcrController {
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<LcrDto> update(@RequestBody UserDto lcrDto) {
+    public ApiResponse<LcrDto> update(@RequestBody LcrDto lcrDto) {
         return new ApiResponse<>(HttpStatus.OK.value(), "User updated successfully.",lcrservice.update(lcrDto));
     }
 

@@ -16,7 +16,7 @@ public interface LcrService {
 
     Lcr findOne(String lcr_name);
 
-    Lcr findById(int lcr_id);
+    Lcr findById(int lcr_policy_id);
 
     LcrDto update(LcrDto lcrDto);
 }
