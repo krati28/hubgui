@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -19,6 +21,8 @@ public class Lcr {
 	private int lcr_policy_id;
 	
 	@Column(length=30)
+	@NotBlank
+	@Pattern(regexp ="^[a-zA-Z0-9_]+$", message="Invalid entry")
 	private String lcr_name;
 	
 	@Column(length=30)

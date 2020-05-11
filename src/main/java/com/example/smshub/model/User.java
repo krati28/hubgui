@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 //import org.springframework.data.annotation.Id;
 
@@ -21,6 +23,8 @@ public class User {
 	private int cluster_id;
 	
 	@Column(length=21)
+	@NotBlank
+	@Pattern(regexp ="^[a-zA-Z0-9_]+$", message="Invalid entry")
 	private String cluster_name;
 	
 	@Column(columnDefinition = "integer(1)")
